@@ -1,0 +1,56 @@
+{
+  "version": "1.4.2-i18n.1",
+  "description": "Localized build of the Zed editor (tr-TR)",
+  "homepage": "https://github.com/LI-NA/zed-i18n",
+  "license": "GPL-3.0",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/LI-NA/zed-i18n/releases/download/v1.4.2-i18n.1/Zed-i18n-tr-TR-windows-x86_64.zip",
+      "hash": "eaffbcee0d2c0a18caf8da8381f7b806c38ce2d85e7d097634866d45b7ab9652"
+    },
+    "arm64": {
+      "url": "https://github.com/LI-NA/zed-i18n/releases/download/v1.4.2-i18n.1/Zed-i18n-tr-TR-windows-aarch64.zip",
+      "hash": "c0bd2e5c1e1b6d0b8c4cfe9a7c514091627339dcbec323f5dde43d41a86a2034"
+    }
+  },
+  "bin": [
+    [
+      "bin\\zed.exe",
+      "zed-i18n"
+    ]
+  ],
+  "shortcuts": [
+    [
+      "Zed.exe",
+      "Zed i18n (tr-TR)"
+    ]
+  ],
+  "env_set": {
+    "ZED_UPDATE_EXPLANATION": "Run 'scoop update zed-i18n-tr-TR' to update."
+  },
+  "post_install": [
+    "$cfg = Join-Path $env:APPDATA 'Zed\\global_settings.json'",
+    "$dir = Split-Path -Parent $cfg",
+    "if (!(Test-Path $dir)) { New-Item -ItemType Directory -Path $dir | Out-Null }",
+    "if ((Test-Path $cfg) -and ((Get-Item $cfg).Length -gt 0)) { $j = Get-Content $cfg -Raw | ConvertFrom-Json } else { $j = [pscustomobject]@{} }",
+    "$j | Add-Member -MemberType NoteProperty -Name auto_update -Value $false -Force",
+    "[System.IO.File]::WriteAllText($cfg, ($j | ConvertTo-Json -Depth 10), (New-Object System.Text.UTF8Encoding $false))"
+  ],
+  "checkver": {
+    "url": "https://github.com/LI-NA/zed-i18n/releases/latest",
+    "regex": "/releases/tag/v([\\d.]+-i18n\\.\\d+)"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/LI-NA/zed-i18n/releases/download/v$version/Zed-i18n-tr-TR-windows-x86_64.zip"
+      },
+      "arm64": {
+        "url": "https://github.com/LI-NA/zed-i18n/releases/download/v$version/Zed-i18n-tr-TR-windows-aarch64.zip"
+      }
+    },
+    "hash": {
+      "url": "https://github.com/LI-NA/zed-i18n/releases/download/v$version/SHA256SUMS.txt"
+    }
+  }
+}
