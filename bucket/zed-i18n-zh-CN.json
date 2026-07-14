@@ -1,16 +1,16 @@
 {
-  "version": "1.10.2-i18n.1",
+  "version": "1.10.3-i18n.1",
   "description": "Localized build of the Zed editor (zh-CN)",
   "homepage": "https://github.com/LI-NA/zed-i18n",
   "license": "GPL-3.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/LI-NA/zed-i18n/releases/download/v1.10.2-i18n.1/Zed-i18n-zh-CN-windows-x86_64.zip",
-      "hash": "ac837a7bb879ad0695e18e4cbd4f71c7cea370c30398aaca74587ecd7cffe020"
+      "url": "https://github.com/LI-NA/zed-i18n/releases/download/v1.10.3-i18n.1/Zed-i18n-zh-CN-windows-x86_64.zip",
+      "hash": "82debc8d169798f2005b0efc7d0b3c86eeb8c034152103326f45d7cf13c64204"
     },
     "arm64": {
-      "url": "https://github.com/LI-NA/zed-i18n/releases/download/v1.10.2-i18n.1/Zed-i18n-zh-CN-windows-aarch64.zip",
-      "hash": "0e4b5212d57a6d084237d689132406b15fd7584228d56a3ac817f4317e6bc5f1"
+      "url": "https://github.com/LI-NA/zed-i18n/releases/download/v1.10.3-i18n.1/Zed-i18n-zh-CN-windows-aarch64.zip",
+      "hash": "4f54a9a16b890111aae0dd3037e7b1062b64f0be1de34df93c86a9a10900bdbc"
     }
   },
   "bin": [
