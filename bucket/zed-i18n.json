@@ -1,6 +1,6 @@
 {
   "version": "1.15.0-i18n.2",
-  "description": "Localized build of the Zed editor (ru-RU)",
+  "description": "Localized build of the Zed editor",
   "homepage": "https://github.com/LI-NA/zed-i18n",
   "license": "GPL-3.0",
   "architecture": {
@@ -22,11 +22,11 @@
   "shortcuts": [
     [
       "Zed.exe",
-      "Zed i18n (ru-RU)"
+      "Zed i18n"
     ]
   ],
   "env_set": {
-    "ZED_UPDATE_EXPLANATION": "Run 'scoop update zed-i18n-ru-RU' to update."
+    "ZED_UPDATE_EXPLANATION": "Run 'scoop update zed-i18n' to update."
   },
   "post_install": [
     "$cfg = Join-Path $env:APPDATA 'Zed\\global_settings.json'",
@@ -52,10 +52,5 @@
     "hash": {
       "url": "https://github.com/LI-NA/zed-i18n/releases/download/v$version/SHA256SUMS.txt"
     }
-  },
-  "notes": [
-    "zed-i18n now ships a single build with every language included,",
-    "and this package installs that build. To switch to the plain",
-    "package, run: scoop uninstall zed-i18n-ru-RU; scoop install zed-i18n"
-  ]
+  }
 }
